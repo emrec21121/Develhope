@@ -75,8 +75,7 @@ greet_family()
 
 family_members = [("Tristram", "Mcbride"), ("Baldwin", "Preston"), ("Wally", "Collins")]
 for member in family_members:
-    greet_family(*member)
-
+    greet_family(member[0], member[1])
 # Exercise 5 - Functions
 import random
 def random_list_summer(number):
