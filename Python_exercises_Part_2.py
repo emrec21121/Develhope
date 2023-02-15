@@ -1,4 +1,4 @@
-# Iterators - While Loop
+"""# Iterators - While Loop
 i = 1 
 while i < 6:
     print("*"*i)
@@ -108,5 +108,86 @@ my_list= [*range(5)]
 squares_even = lambda x: x ** 2 if x % 2 == 0 else x
 squared_list = list(map(squares_even, my_list))
 print(squared_list)
-
+"""
 # February 08, 2023
+
+# Classes and Objects 1
+class Animal:
+    def __init__(self, number_of_legs, does_run):
+        self.number_of_legs = number_of_legs
+        self.does_run = does_run
+    print("Animal object was created")
+    def runs(self):
+        if self.does_run == True:
+            return print("Running started")
+        else:
+            return print("This animal can't run")
+
+        
+panther = Animal(4, True)
+panther.runs()
+
+# Classes and Objects 2
+
+class Animal:
+    def __init__(self, number_of_legs, does_run):
+        self.number_of_legs = number_of_legs
+        self.does_run = does_run
+    print("Animal object was created")
+    def runs(self):
+        if self.does_run == True:
+            return print("Running started")
+        else:
+            return print("This animal can't run")
+
+    def count_legs(self):
+        print(f'This animal has {self.number_of_legs} legs')
+    
+    def return_legs(self):
+        return (f'This animal has {self.number_of_legs} legs')
+
+cow = Animal(4, True)
+cow.count_legs()
+print(cow.return_legs())
+print(cow.number_of_legs)
+
+
+# Classes and Objects 3
+
+class Animal:
+    def __init__(self, number_of_legs, does_run):
+        self.__number_of_legs = number_of_legs
+        self.does_run = does_run
+    print("Animal object was created")
+    def runs(self):
+        if self.does_run == True:
+            return print("Running started")
+        else:
+            return print("This animal can't run")
+    def count_legs(self):
+        print(self.__number_of_legs)
+    
+    def return_legs(self):
+        return self.__number_of_legs
+
+chicken = Animal(2, True)
+chicken._Animal__number_of_legs
+chicken.count_legs()
+
+
+# Classes and Objects 4
+
+class Dog(Animal):
+    def __init__(self, number_of_legs, does_run, name):
+        Animal.__init__(self, number_of_legs, does_run)
+        self.name = name
+    
+    def bark(self):
+        print("woof woof")
+
+sparky = Dog(4, True , "Sparky")
+print(sparky.name)
+sparky.bark()
+sparky.count_legs()
+
+# February 15, 2023
